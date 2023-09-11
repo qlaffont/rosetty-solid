@@ -75,7 +75,7 @@
     }
   },
   "resolutions": {
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "devDependencies": {
     "@size-limit/preset-small-lib": "9.0.0",
@@ -101,7 +101,7 @@
     "ts-jest": "^29.1.0",
     "tsdx": "0.14.1",
     "tslib": "2.6.2",
-    "typescript": "5.1.6"
+    "typescript": "5.2.2"
   },
   "dependencies": {
     "babel-preset-solid": "^1.7.7",
