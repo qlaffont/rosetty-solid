@@ -78,7 +78,7 @@
     "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "8.2.6",
+    "@size-limit/preset-small-lib": "9.0.0",
     "@solidjs/testing-library": "^0.8.4",
     "@testing-library/jest-dom": "6.0.0",
     "@types/jest": "^29.5.0",
