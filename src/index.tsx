@@ -2,7 +2,6 @@
 import { Language, rosetty, RosettyReturn } from 'rosetty';
 import {
   Accessor,
-  children,
   createContext,
   createMemo,
   createSignal,
@@ -23,7 +22,6 @@ export const RosettyProvider = (props: {
       rosetty(props.languages, props.defaultLanguage, props.translateFallback),
     [props.languages]
   );
-  const c = children(() => props.children);
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
 
   const providerReturn = {
@@ -37,8 +35,8 @@ export const RosettyProvider = (props: {
   };
 
   return (
-    <RosettyContext.Provider value={providerReturn}>
-      {c()}
+    <RosettyContext.Provider value={() => providerReturn}>
+      {props.children}
     </RosettyContext.Provider>
   );
 };
@@ -48,9 +46,15 @@ type AnyObject = Record<string, any>;
 export function useRosetty<T extends AnyObject>(): RosettyReturn<T> & {
   actualLang: Accessor<string | undefined>;
 } {
+  const client = useContext(RosettyContext);
+
+  if (!client) {
+    throw new Error('No RosettyClient set, use RosettyProvider to set one');
+  }
+
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
-  return useContext(RosettyContext);
+  return client();
 }
 
 export type Rosetty<T extends AnyObject> = RosettyReturn<T>;
