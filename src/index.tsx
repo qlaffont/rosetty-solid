@@ -20,22 +20,24 @@ export const RosettyProvider = (props: {
   const r = createMemo(
     () =>
       rosetty(props.languages, props.defaultLanguage, props.translateFallback),
-    [props.languages]
+    []
   );
+
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
 
-  const providerReturn = {
-    ...r(),
-    actualLang,
-    changeLang: (lang: string) => {
-      r().changeLang(lang);
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      setActualLang(r().getCurrentLang()!);
-    },
+  const changeLang = (lang: string) => {
+    r().changeLang(lang);
+    setActualLang(r().getCurrentLang()!);
   };
 
   return (
-    <RosettyContext.Provider value={() => providerReturn}>
+    <RosettyContext.Provider
+      value={() => ({
+        ...r(),
+        actualLang,
+        changeLang,
+      })}
+    >
       {props.children}
     </RosettyContext.Provider>
   );

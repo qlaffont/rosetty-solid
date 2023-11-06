@@ -45,7 +45,6 @@ describe('rosetty solid', () => {
       </I18NContextProvider>
     );
     const { result } = renderHook(() => useRosetty(), { wrapper });
-    console.log(result);
     expect(result.languages).toStrictEqual(['fr']);
     expect(Object.keys(result)).toStrictEqual([
       'changeLang',
