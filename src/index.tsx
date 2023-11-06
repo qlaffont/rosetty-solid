@@ -2,6 +2,7 @@
 import { Language, rosetty, RosettyReturn } from 'rosetty';
 import {
   Accessor,
+  children,
   createContext,
   createMemo,
   createSignal,
@@ -22,6 +23,7 @@ export const RosettyProvider = (props: {
       rosetty(props.languages, props.defaultLanguage, props.translateFallback),
     [props.languages]
   );
+  const c = children(() => props.children);
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
 
   const providerReturn = {
@@ -36,7 +38,7 @@ export const RosettyProvider = (props: {
 
   return (
     <RosettyContext.Provider value={providerReturn}>
-      {props.children}
+      {c()}
     </RosettyContext.Provider>
   );
 };
