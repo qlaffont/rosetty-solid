@@ -1,7 +1,7 @@
 {
-  "version": "1.0.36",
+  "version": "1.0.37",
   "license": "MIT",
-  "main": "dist/index.js",
+  "main": "./dist/index/server.cjs",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -38,7 +38,7 @@
   },
   "name": "rosetty-solid",
   "author": "Quentin Laffont",
-  "module": "dist/rosetty-solid.esm.js",
+  "module": "./dist/index/server.js",
   "size-limit": [
     {
       "path": "dist/rosetty-solid.cjs.production.min.js",
@@ -83,6 +83,7 @@
     "@typescript-eslint/eslint-plugin": "6.11.0",
     "@typescript-eslint/parser": "6.11.0",
     "babel-jest": "^29.6.4",
+    "babel-preset-solid": "^1.7.7",
     "dayjs": "^1.11.9",
     "eslint": "8.54.0",
     "eslint-config-prettier": "9.0.0",
@@ -99,13 +100,142 @@
     "ts-jest": "^29.1.0",
     "tslib": "2.6.2",
     "tsup": "^8.0.0",
-    "typescript": "5.2.2",
-    "babel-preset-solid": "^1.7.7"
+    "tsup-preset-solid": "^2.1.0",
+    "typescript": "5.2.2"
   },
   "peerDependencies": {
     "solid-js": "^1.7.11"
   },
   "dependencies": {
     "rosetty": "^2.0.0"
-  }
+  },
+  "types": "./dist/index/index.d.ts",
+  "browser": {
+    "./dist/index/server.js": "./dist/index/index.js",
+    "./dist/index/server.cjs": "./dist/index/index.cjs"
+  },
+  "exports": {
+    ".": {
+      "worker": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "browser": {
+        "solid": {
+          "development": "./dist/index/dev.jsx",
+          "import": "./dist/index/index.jsx"
+        },
+        "development": {
+          "import": {
+            "types": "./dist/index/index.d.ts",
+            "default": "./dist/index/dev.js"
+          },
+          "require": {
+            "types": "./dist/index/index.d.cts",
+            "default": "./dist/index/dev.cjs"
+          }
+        },
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/index.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/index.cjs"
+        }
+      },
+      "deno": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "node": {
+        "solid": "./dist/index/server.jsx",
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/server.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/server.cjs"
+        }
+      },
+      "solid": {
+        "development": "./dist/index/dev.jsx",
+        "import": "./dist/index/index.jsx"
+      },
+      "development": {
+        "import": {
+          "types": "./dist/index/index.d.ts",
+          "default": "./dist/index/dev.js"
+        },
+        "require": {
+          "types": "./dist/index/index.d.cts",
+          "default": "./dist/index/dev.cjs"
+        }
+      },
+      "import": {
+        "types": "./dist/index/index.d.ts",
+        "default": "./dist/index/index.js"
+      },
+      "require": {
+        "types": "./dist/index/index.d.cts",
+        "default": "./dist/index/index.cjs"
+      }
+    },
+    "./additional": {
+      "development": {
+        "import": {
+          "types": "./dist/additional/index.d.ts",
+          "default": "./dist/additional/dev.js"
+        },
+        "require": {
+          "types": "./dist/additional/index.d.cts",
+          "default": "./dist/additional/dev.cjs"
+        }
+      },
+      "import": {
+        "types": "./dist/additional/index.d.ts",
+        "default": "./dist/additional/index.js"
+      },
+      "require": {
+        "types": "./dist/additional/index.d.cts",
+        "default": "./dist/additional/index.cjs"
+      }
+    },
+    "./shared": {
+      "import": {
+        "types": "./dist/shared/index.d.ts",
+        "default": "./dist/shared/index.js"
+      },
+      "require": {
+        "types": "./dist/shared/index.d.cts",
+        "default": "./dist/shared/index.cjs"
+      }
+    }
+  },
+  "typesVersions": {
+    "*": {
+      "additional": [
+        "./dist/additional/index.d.ts"
+      ],
+      "shared": [
+        "./dist/shared/index.d.ts"
+      ]
+    }
+  },
+  "type": "module"
 }
