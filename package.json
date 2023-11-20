@@ -1,5 +1,5 @@
 {
-  "version": "1.0.34",
+  "version": "1.0.35",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -19,17 +19,16 @@
     "node": ">=10"
   },
   "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
+    "build": "tsup src/index.tsx",
     "test": "jest",
     "lint": "eslint src test",
-    "prepare": "tsdx build",
+    "prepare": "pnpm build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "tsdx lint"
+      "pre-commit": "pnpm lint"
     }
   },
   "prettier": {
@@ -99,13 +98,15 @@
     "size-limit": "11.0.0",
     "solid-jest": "^0.2.0",
     "ts-jest": "^29.1.0",
-    "tsdx": "0.14.1",
     "tslib": "2.6.2",
-    "typescript": "5.2.2"
+    "tsup": "^8.0.0",
+    "typescript": "5.2.2",
+    "babel-preset-solid": "^1.7.7"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.7.11"
   },
   "dependencies": {
-    "babel-preset-solid": "^1.7.7",
-    "rosetty": "^2.0.0",
-    "solid-js": "^1.7.11"
+    "rosetty": "^2.0.0"
   }
 }
