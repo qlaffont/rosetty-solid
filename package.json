@@ -1,7 +1,7 @@
 {
-  "version": "1.0.38",
+  "version": "1.0.39",
   "license": "MIT",
-  "main": "./dist/server.cjs",
+  "main": "./dist/index.cjs",
   "typings": "dist/index.d.ts",
   "repository": {
     "type": "git",
@@ -38,14 +38,14 @@
   },
   "name": "rosetty-solid",
   "author": "Quentin Laffont",
-  "module": "./dist/server.js",
+  "module": "./dist/index.js",
   "size-limit": [
     {
-      "path": "dist/rosetty-solid.cjs.production.min.js",
+      "path": "dist/index.js",
       "limit": "300 KB"
     },
     {
-      "path": "dist/rosetty-solid.esm.js",
+      "path": "dist/index.cjs",
       "limit": "200 KB"
     }
   ],
@@ -110,92 +110,18 @@
     "rosetty": "^2.0.0"
   },
   "types": "./dist/index.d.ts",
-  "browser": {
-    "./dist/server.js": "./dist/index.js",
-    "./dist/server.cjs": "./dist/index.cjs"
-  },
   "exports": {
-    ".": {
-      "worker": {
-        "solid": "./dist/server.jsx",
-        "import": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/server.js"
-        },
-        "require": {
-          "types": "./dist/index.d.cts",
-          "default": "./dist/server.cjs"
-        }
-      },
-      "browser": {
-        "solid": {
-          "development": "./dist/dev.jsx",
-          "import": "./dist/index.jsx"
-        },
-        "development": {
-          "import": {
-            "types": "./dist/index.d.ts",
-            "default": "./dist/dev.js"
-          },
-          "require": {
-            "types": "./dist/index.d.cts",
-            "default": "./dist/dev.cjs"
-          }
-        },
-        "import": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/index.js"
-        },
-        "require": {
-          "types": "./dist/index.d.cts",
-          "default": "./dist/index.cjs"
-        }
-      },
-      "deno": {
-        "solid": "./dist/server.jsx",
-        "import": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/server.js"
-        },
-        "require": {
-          "types": "./dist/index.d.cts",
-          "default": "./dist/server.cjs"
-        }
-      },
-      "node": {
-        "solid": "./dist/server.jsx",
-        "import": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/server.js"
-        },
-        "require": {
-          "types": "./dist/index.d.cts",
-          "default": "./dist/server.cjs"
-        }
-      },
-      "solid": {
-        "development": "./dist/dev.jsx",
-        "import": "./dist/index.jsx"
-      },
-      "development": {
-        "import": {
-          "types": "./dist/index.d.ts",
-          "default": "./dist/dev.js"
-        },
-        "require": {
-          "types": "./dist/index.d.cts",
-          "default": "./dist/dev.cjs"
-        }
-      },
-      "import": {
-        "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
-      },
-      "require": {
-        "types": "./dist/index.d.cts",
-        "default": "./dist/index.cjs"
-      }
+    "solid": "./dist/index.jsx",
+    "import": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "require": {
+      "types": "./dist/index.d.cts",
+      "default": "./dist/index.cjs"
     }
   },
-  "type": "module"
+  "type": "module",
+  "browser": {},
+  "typesVersions": {}
 }
