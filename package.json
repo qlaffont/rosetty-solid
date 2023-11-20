@@ -1,5 +1,5 @@
 {
-  "version": "1.0.35",
+  "version": "1.0.36",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -22,7 +22,6 @@
     "build": "tsup src/index.tsx",
     "test": "jest",
     "lint": "eslint src test",
-    "prepare": "pnpm build",
     "size": "size-limit",
     "analyze": "size-limit --why"
   },
