@@ -32,11 +32,11 @@ export const RosettyProvider = (props: {
 
   return (
     <RosettyContext.Provider
-      value={() => ({
+      value={{
         ...r(),
         actualLang,
         changeLang,
-      })}
+      }}
     >
       {props.children}
     </RosettyContext.Provider>
@@ -56,7 +56,7 @@ export function useRosetty<T extends AnyObject>(): RosettyReturn<T> & {
 
   // eslint-disable-next-line @typescript-eslint/ban-ts-comment
   //@ts-ignore
-  return client();
+  return client;
 }
 
 export type Rosetty<T extends AnyObject> = RosettyReturn<T>;
