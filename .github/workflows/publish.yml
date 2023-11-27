@@ -48,7 +48,7 @@ jobs:
 
       - name: Install deps and build (with cache)
         if: steps.changes.outputs.src == 'true'
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm config set auto-install-peers true && pnpm install --no-frozen-lockfile
 
       - name: Lint
         if: steps.changes.outputs.src == 'true'
