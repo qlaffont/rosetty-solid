@@ -1,5 +1,5 @@
 {
-  "version": "1.0.66",
+  "version": "1.0.67",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "typings": "dist/index.d.ts",
@@ -103,9 +103,7 @@
   },
   "peerDependencies": {
     "solid-js": "^1.8.7",
-    "dayjs": "^1.11.10"
-  },
-  "dependencies": {
+    "dayjs": "^1.11.10",
     "rosetty": "^2.0.0"
   },
   "types": "./dist/index.d.ts",
