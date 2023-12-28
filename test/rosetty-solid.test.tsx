@@ -90,8 +90,8 @@ describe('rosetty solid', () => {
     const wrapper = (props) => (
       <I18NContextProvider
         languages={{
-          fr: { dict: {}, locale: fr },
-          en: { dict: {}, locale: enGB },
+          fr: { dict: { toto: 'test' }, locale: fr },
+          en: { dict: { toto: 'EN' }, locale: enGB },
         }}
         defaultLanguage="en"
       >
@@ -102,8 +102,12 @@ describe('rosetty solid', () => {
     const { result, cleanup } = renderHook(() => useRosetty(), { wrapper });
 
     expect(result.actualLang()).toStrictEqual('en');
+    //@ts-ignore
+    expect(result.t('toto')).toStrictEqual('EN');
     result.changeLang('fr');
     cleanup();
     expect(result.actualLang()).toStrictEqual('fr');
+    //@ts-ignore
+    expect(result.t('toto')).toStrictEqual('test');
   });
 });
