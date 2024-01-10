@@ -109,5 +109,9 @@ describe('rosetty solid', () => {
     expect(result.actualLang()).toStrictEqual('fr');
     //@ts-ignore
     expect(result.t('toto')).toStrictEqual('test');
+    //@ts-ignore
+    expect(result.t('tutu', {}, { fr: { tutu: 'test2' } })).toStrictEqual(
+      'test2'
+    );
   });
 });

@@ -17,6 +17,8 @@ export const RosettyProvider = (props: {
   defaultLanguage: string;
   translateFallback?: boolean;
 }) => {
+  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+  //@ts-ignore
   const r = createMemo(
     () =>
       rosetty(props.languages, props.defaultLanguage, props.translateFallback),

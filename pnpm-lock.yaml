@@ -12,8 +12,8 @@ dependencies:
     specifier: ^1.11.10
     version: 1.11.10
   rosetty:
-    specifier: 2.0.11
-    version: 2.0.11
+    specifier: 2.1.0
+    version: 2.1.0
   solid-js:
     specifier: ^1.8
     version: 1.8.7
@@ -7523,8 +7523,8 @@ packages:
       templite: 1.2.0
     dev: false
 
-  /rosetty@2.0.11:
-    resolution: {integrity: sha512-27OAnBhCp9RPlqRI7BcJ1vG/u9vLtWxRMtsf9idLGF1FaoTPt+HynGd6XOTZ4KrhYOLAL2Afldb+Vii3PrSVCw==}
+  /rosetty@2.1.0:
+    resolution: {integrity: sha512-0wCpIp0z37c1I3p83xB4y59cbSclQ5A1gr3ELUUqjfWLCumHEFLx+1X4sB6dBIvJ6okaHNlspTIjAr9cvCNqTg==}
     engines: {node: '>=10'}
     dependencies:
       dayjs: 1.11.10
