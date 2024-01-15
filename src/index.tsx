@@ -3,6 +3,7 @@ import { Language, rosetty, RosettyReturn } from 'rosetty';
 import {
   Accessor,
   createContext,
+  createMemo,
   createSignal,
   JSX,
   useContext,
@@ -31,15 +32,17 @@ export const RosettyProvider = (props: {
     setLastUpdate(Date.now());
   };
 
+  const returnValue = createMemo(() => {
+    return {
+      ...r,
+      actualLang,
+      changeLang,
+      lastUpdate: lastUpdate(),
+    };
+  });
+
   return (
-    <RosettyContext.Provider
-      value={{
-        ...r,
-        actualLang,
-        changeLang,
-        lastUpdate: lastUpdate(),
-      }}
-    >
+    <RosettyContext.Provider value={returnValue()}>
       {props.children}
     </RosettyContext.Provider>
   );

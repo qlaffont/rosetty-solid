@@ -100,17 +100,17 @@ describe('rosetty solid', () => {
       </I18NContextProvider>
     );
 
-    const { result, cleanup } = renderHook(() => useRosetty(), { wrapper });
+    const { result, cleanup } = renderHook(
+      () => useRosetty<{ toto: string }>(),
+      { wrapper }
+    );
 
     expect(result.actualLang()).toStrictEqual('en');
-    //@ts-ignore
     expect(result.t('toto')).toStrictEqual('EN');
     result.changeLang('fr');
     cleanup();
     expect(result.actualLang()).toStrictEqual('fr');
-    //@ts-ignore
     expect(result.t('toto')).toStrictEqual('test');
-    //@ts-ignore
     expect(result.t('tutu', {}, { fr: { tutu: 'test2' } })).toStrictEqual(
       'test2'
     );
