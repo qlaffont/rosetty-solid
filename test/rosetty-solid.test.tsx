@@ -61,6 +61,7 @@ describe('rosetty solid', () => {
       'formatDistanceToNow',
       'formatDuration',
       'actualLang',
+      'lastUpdate',
     ]);
   });
 

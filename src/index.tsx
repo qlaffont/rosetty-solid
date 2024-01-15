@@ -16,26 +16,28 @@ export const RosettyProvider = (props: {
   defaultLanguage: string;
   translateFallback?: boolean;
 }) => {
-  const [r, setR] = createSignal(
-    rosetty(props.languages, props.defaultLanguage, props.translateFallback)
+  const r = rosetty(
+    props.languages,
+    props.defaultLanguage,
+    props.translateFallback
   );
+  const [lastUpdate, setLastUpdate] = createSignal(0);
 
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
 
   const changeLang = (lang: string) => {
-    r().changeLang(lang);
-    setActualLang(r().getCurrentLang()!);
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    //@ts-ignore
-    setR(r());
+    r.changeLang(lang);
+    setActualLang(r.getCurrentLang()!);
+    setLastUpdate(Date.now());
   };
 
   return (
     <RosettyContext.Provider
       value={{
-        ...r(),
+        ...r,
         actualLang,
         changeLang,
+        lastUpdate: lastUpdate(),
       }}
     >
       {props.children}
