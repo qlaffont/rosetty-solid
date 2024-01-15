@@ -17,27 +17,25 @@ export const RosettyProvider = (props: {
   defaultLanguage: string;
   translateFallback?: boolean;
 }) => {
-  const r = rosetty(
-    props.languages,
-    props.defaultLanguage,
-    props.translateFallback
+  const [r, setLastR] = createSignal(
+    rosetty(props.languages, props.defaultLanguage, props.translateFallback)
   );
-  const [lastUpdate, setLastUpdate] = createSignal(0);
 
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
 
   const changeLang = (lang: string) => {
-    r.changeLang(lang);
-    setActualLang(r.getCurrentLang()!);
-    setLastUpdate(Date.now());
+    r().changeLang(lang);
+    setActualLang(r().getCurrentLang()!);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    setLastR(r());
   };
 
   const returnValue = createMemo(() => {
     return {
-      ...r,
+      ...r(),
       actualLang,
       changeLang,
-      lastUpdate: lastUpdate(),
     };
   });
 
