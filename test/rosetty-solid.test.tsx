@@ -45,8 +45,8 @@ describe('rosetty solid', () => {
       </I18NContextProvider>
     );
     const { result } = renderHook(() => useRosetty(), { wrapper });
-    expect(result.languages).toStrictEqual(['fr']);
-    expect(Object.keys(result)).toStrictEqual([
+    expect(result().languages).toStrictEqual(['fr']);
+    expect(Object.keys(result())).toStrictEqual([
       'changeLang',
       'languages',
       'getCurrentLang',
@@ -104,13 +104,13 @@ describe('rosetty solid', () => {
       { wrapper }
     );
 
-    expect(result.actualLang()).toStrictEqual('en');
-    expect(result.t('toto')).toStrictEqual('EN');
-    result.changeLang('fr');
+    expect(result().actualLang()).toStrictEqual('en');
+    expect(result().t('toto')).toStrictEqual('EN');
+    result().changeLang('fr');
     cleanup();
-    expect(result.actualLang()).toStrictEqual('fr');
-    expect(result.t('toto')).toStrictEqual('test');
-    expect(result.t('tutu', {}, { fr: { tutu: 'test2' } })).toStrictEqual(
+    expect(result().actualLang()).toStrictEqual('fr');
+    expect(result().t('toto')).toStrictEqual('test');
+    expect(result().t('tutu', {}, { fr: { tutu: 'test2' } })).toStrictEqual(
       'test2'
     );
   });

@@ -18,7 +18,8 @@ export const RosettyProvider = (props: {
   translateFallback?: boolean;
 }) => {
   const [r, setLastR] = createSignal(
-    rosetty(props.languages, props.defaultLanguage, props.translateFallback)
+    rosetty(props.languages, props.defaultLanguage, props.translateFallback),
+    { equals: false }
   );
 
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
@@ -40,7 +41,7 @@ export const RosettyProvider = (props: {
   });
 
   return (
-    <RosettyContext.Provider value={returnValue()}>
+    <RosettyContext.Provider value={returnValue}>
       {props.children}
     </RosettyContext.Provider>
   );
@@ -48,9 +49,11 @@ export const RosettyProvider = (props: {
 
 type AnyObject = Record<string, any>;
 
-export function useRosetty<T extends AnyObject>(): RosettyReturn<T> & {
-  actualLang: Accessor<string | undefined>;
-} {
+export function useRosetty<T extends AnyObject>(): Accessor<
+  RosettyReturn<T> & {
+    actualLang: Accessor<string | undefined>;
+  }
+> {
   const client = useContext(RosettyContext);
 
   if (!client) {

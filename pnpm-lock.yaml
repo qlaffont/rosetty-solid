@@ -13,7 +13,7 @@ devDependencies:
     version: 11.0.1(size-limit@11.0.1)
   '@solidjs/testing-library':
     specifier: ^0.8.5
-    version: 0.8.5(@solidjs/router@0.8.3)(solid-js@1.8.7)
+    version: 0.8.5(@solidjs/router@0.8.3)(solid-js@1.8.11)
   '@testing-library/jest-dom':
     specifier: 6.2.0
     version: 6.2.0(@types/jest@29.5.11)(jest@29.7.0)
@@ -76,7 +76,7 @@ devDependencies:
     version: 0.2.0(@babel/core@7.22.17)(babel-preset-solid@1.8.6)
   solid-js:
     specifier: ^1.8
-    version: 1.8.7
+    version: 1.8.11
   ts-jest:
     specifier: ^29.1.1
     version: 29.1.1(@babel/core@7.22.17)(babel-jest@29.7.0)(esbuild@0.19.8)(jest@29.7.0)(typescript@5.3.3)
@@ -88,7 +88,7 @@ devDependencies:
     version: 8.0.1(typescript@5.3.3)
   tsup-preset-solid:
     specifier: ^2.2.0
-    version: 2.2.0(esbuild@0.19.8)(solid-js@1.8.7)(tsup@8.0.1)
+    version: 2.2.0(esbuild@0.19.8)(solid-js@1.8.11)(tsup@8.0.1)
   typescript:
     specifier: 5.3.3
     version: 5.3.3
@@ -2434,24 +2434,24 @@ packages:
       size-limit: 11.0.1
     dev: true
 
-  /@solidjs/router@0.8.3(solid-js@1.8.7):
+  /@solidjs/router@0.8.3(solid-js@1.8.11):
     resolution: {integrity: sha512-oJuqQo10rVTiQYhe1qXIG1NyZIZ2YOwHnlLc8Xx+g/iJhFCJo1saLOIrD/Dkh2fpIaIny5ZMkz1cYYqoTYGJbg==}
     peerDependencies:
       solid-js: ^1.5.3
     dependencies:
-      solid-js: 1.8.7
+      solid-js: 1.8.11
     dev: true
 
-  /@solidjs/testing-library@0.8.5(@solidjs/router@0.8.3)(solid-js@1.8.7):
+  /@solidjs/testing-library@0.8.5(@solidjs/router@0.8.3)(solid-js@1.8.11):
     resolution: {integrity: sha512-L9TowCoqdRQGB8ikODh9uHXrYTjCUZseVUG0tIVa836//qeSqXP4m0BKG66v9Zp1y1wRxok5qUW97GwrtEBMcw==}
     engines: {node: '>= 14'}
     peerDependencies:
       '@solidjs/router': '>=0.6.0'
       solid-js: '>=1.0.0'
     dependencies:
-      '@solidjs/router': 0.8.3(solid-js@1.8.7)
+      '@solidjs/router': 0.8.3(solid-js@1.8.11)
       '@testing-library/dom': 9.3.1
-      solid-js: 1.8.7
+      solid-js: 1.8.11
     dev: true
 
   /@szmarczak/http-timer@4.0.6:
@@ -4150,7 +4150,7 @@ packages:
       is-symbol: 1.0.4
     dev: true
 
-  /esbuild-plugin-solid@0.5.0(esbuild@0.19.8)(solid-js@1.8.7):
+  /esbuild-plugin-solid@0.5.0(esbuild@0.19.8)(solid-js@1.8.11):
     resolution: {integrity: sha512-ITK6n+0ayGFeDVUZWNMxX+vLsasEN1ILrg4pISsNOQ+mq4ljlJJiuXotInd+HE0MzwTcA9wExT1yzDE2hsqPsg==}
     peerDependencies:
       esbuild: '>=0.12'
@@ -4160,7 +4160,7 @@ packages:
       '@babel/preset-typescript': 7.23.3(@babel/core@7.22.17)
       babel-preset-solid: 1.8.6(@babel/core@7.22.17)
       esbuild: 0.19.8
-      solid-js: 1.8.7
+      solid-js: 1.8.11
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -7633,8 +7633,17 @@ packages:
       lru-cache: 6.0.0
     dev: true
 
-  /seroval@0.15.1:
-    resolution: {integrity: sha512-OPVtf0qmeC7RW+ScVX+7aOS+xoIM7pWcZ0jOWg2aTZigCydgRB04adfteBRbecZnnrO1WuGQ+C3tLeBBzX2zSQ==}
+  /seroval-plugins@1.0.4(seroval@1.0.4):
+    resolution: {integrity: sha512-DQ2IK6oQVvy8k+c2V5x5YCtUa/GGGsUwUBNN9UqohrZ0rWdUapBFpNMYP1bCyRHoxOJjdKGl+dieacFIpU/i1A==}
+    engines: {node: '>=10'}
+    peerDependencies:
+      seroval: ^1.0
+    dependencies:
+      seroval: 1.0.4
+    dev: true
+
+  /seroval@1.0.4:
+    resolution: {integrity: sha512-qQs/N+KfJu83rmszFQaTxcoJoPn6KNUruX4KmnmyD0oZkUoiNvJ1rpdYKDf4YHM05k+HOgCxa3yvf15QbVijGg==}
     engines: {node: '>=10'}
     dev: true
 
@@ -7718,11 +7727,12 @@ packages:
       - supports-color
     dev: true
 
-  /solid-js@1.8.7:
-    resolution: {integrity: sha512-9dzrSVieh2zj3SnJ02II6xZkonR6c+j/91b7XZUNcC6xSaldlqjjGh98F1fk5cRJ8ZTkzqF5fPIWDxEOs6QZXA==}
+  /solid-js@1.8.11:
+    resolution: {integrity: sha512-WdwmER+TwBJiN4rVQTVBxocg+9pKlOs41KzPYntrC86xO5sek8TzBYozPEZPL1IRWDouf2lMrvSbIs3CanlPvQ==}
     dependencies:
       csstype: 3.1.2
-      seroval: 0.15.1
+      seroval: 1.0.4
+      seroval-plugins: 1.0.4(seroval@1.0.4)
     dev: true
 
   /source-map-support@0.5.13:
@@ -8193,12 +8203,12 @@ packages:
     resolution: {integrity: sha512-AEYxH93jGFPn/a2iVAwW87VuUIkR1FVUKB77NwMF7nBTDkDrrT/Hpt/IrCJ0QXhW27jTBDcf5ZY7w6RiqTMw2Q==}
     dev: true
 
-  /tsup-preset-solid@2.2.0(esbuild@0.19.8)(solid-js@1.8.7)(tsup@8.0.1):
+  /tsup-preset-solid@2.2.0(esbuild@0.19.8)(solid-js@1.8.11)(tsup@8.0.1):
     resolution: {integrity: sha512-sPAzeArmYkVAZNRN+m4tkiojdd0GzW/lCwd4+TQDKMENe8wr2uAuro1s0Z59ASmdBbkXoxLgCiNcuQMyiidMZg==}
     peerDependencies:
       tsup: ^8.0.0
     dependencies:
-      esbuild-plugin-solid: 0.5.0(esbuild@0.19.8)(solid-js@1.8.7)
+      esbuild-plugin-solid: 0.5.0(esbuild@0.19.8)(solid-js@1.8.11)
       tsup: 8.0.1(typescript@5.3.3)
     transitivePeerDependencies:
       - esbuild
