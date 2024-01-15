@@ -3,7 +3,6 @@ import { Language, rosetty, RosettyReturn } from 'rosetty';
 import {
   Accessor,
   createContext,
-  createMemo,
   createSignal,
   JSX,
   useContext,
@@ -17,12 +16,8 @@ export const RosettyProvider = (props: {
   defaultLanguage: string;
   translateFallback?: boolean;
 }) => {
-  // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-  //@ts-ignore
-  const r = createMemo(
-    () =>
-      rosetty(props.languages, props.defaultLanguage, props.translateFallback),
-    []
+  const [r, setR] = createSignal(
+    rosetty(props.languages, props.defaultLanguage, props.translateFallback)
   );
 
   const [actualLang, setActualLang] = createSignal(props.defaultLanguage);
@@ -30,6 +25,9 @@ export const RosettyProvider = (props: {
   const changeLang = (lang: string) => {
     r().changeLang(lang);
     setActualLang(r().getCurrentLang()!);
+    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+    //@ts-ignore
+    setR(r());
   };
 
   return (
