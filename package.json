@@ -1,5 +1,5 @@
 {
-  "version": "1.0.81",
+  "version": "1.0.82",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "typings": "dist/index.d.ts",
@@ -101,7 +101,7 @@
     "tsup-preset-solid": "^2.2.0",
     "typescript": "5.3.3"
   },
-  "peerDependencies": {
+  "dependencies": {
     "solid-js": "^1.8",
     "dayjs": "^1.11.10",
     "rosetty": "2.1.0"
