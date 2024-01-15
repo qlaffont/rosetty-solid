@@ -1,5 +1,5 @@
 {
-  "version": "1.0.82",
+  "version": "1.0.83",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "typings": "dist/index.d.ts",
@@ -18,7 +18,7 @@
     "node": ">=10"
   },
   "scripts": {
-    "build": "tsup src/index.tsx",
+    "build": "tsup src/index.tsx --external=dayjs,rosetty,solid-js",
     "test": "jest",
     "lint": "eslint src test",
     "size": "size-limit",
@@ -99,11 +99,14 @@
     "tslib": "2.6.2",
     "tsup": "^8.0.1",
     "tsup-preset-solid": "^2.2.0",
-    "typescript": "5.3.3"
-  },
-  "dependencies": {
+    "typescript": "5.3.3",
     "solid-js": "^1.8",
-    "dayjs": "^1.11.10",
+    "dayjs": "^1.11",
+    "rosetty": "2.1.0"
+  },
+  "peerDependencies": {
+    "solid-js": "^1.8",
+    "dayjs": "^1.11",
     "rosetty": "2.1.0"
   },
   "types": "./dist/index.d.ts",
