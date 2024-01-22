@@ -7,10 +7,7 @@
 import '@testing-library/jest-dom';
 
 import { cleanup, renderHook } from '@solidjs/testing-library';
-//@ts-ignore
-import enGB from 'dayjs/locale/en-gb';
-//@ts-ignore
-import fr from 'dayjs/locale/fr';
+import { enGB, fr } from 'date-fns/locale';
 
 import { RosettyContext, RosettyProvider, useRosetty } from '../src';
 //@ts-ignore

@@ -35,5 +35,8 @@ export default defineConfig((config) => {
     preset.writePackageJson(package_fields);
   }
 
-  return preset.generateTsupOptions({ ...parsed_data, externals: ['dayjs'] });
+  return preset.generateTsupOptions({
+    ...parsed_data,
+    externals: ['date-fns'],
+  });
 });

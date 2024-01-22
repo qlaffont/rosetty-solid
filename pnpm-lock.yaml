@@ -32,9 +32,9 @@ devDependencies:
   babel-preset-solid:
     specifier: ^1.8.6
     version: 1.8.6(@babel/core@7.22.17)
-  dayjs:
-    specifier: ^1.11
-    version: 1.11.10
+  date-fns:
+    specifier: ^3.3
+    version: 3.3.0
   eslint:
     specifier: 8.56.0
     version: 8.56.0
@@ -66,8 +66,8 @@ devDependencies:
     specifier: 3.2.4
     version: 3.2.4
   rosetty:
-    specifier: 2.1.0
-    version: 2.1.0
+    specifier: 3.0.0
+    version: 3.0.0
   size-limit:
     specifier: 11.0.2
     version: 11.0.2
@@ -3794,8 +3794,8 @@ packages:
     resolution: {integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==}
     dev: true
 
-  /dayjs@1.11.10:
-    resolution: {integrity: sha512-vjAczensTgRcqDERK0SR2XMwsF/tSvnvlv6VcF2GIhg6Sx4yOIt/irsr1RDJsKiIyBzJDpCoXiWWq28MqH2cnQ==}
+  /date-fns@3.3.0:
+    resolution: {integrity: sha512-xuouT0GuI2W8yXhCMn/AXbSl1Av3wu2hJXxMnnILTY3bYY0UgNK0qOwVXqdFBrobW5qbX1TuOTgMw7c2H2OuhA==}
     dev: true
 
   /debug@3.2.7:
@@ -7532,11 +7532,11 @@ packages:
       templite: 1.2.0
     dev: true
 
-  /rosetty@2.1.0:
-    resolution: {integrity: sha512-0wCpIp0z37c1I3p83xB4y59cbSclQ5A1gr3ELUUqjfWLCumHEFLx+1X4sB6dBIvJ6okaHNlspTIjAr9cvCNqTg==}
+  /rosetty@3.0.0:
+    resolution: {integrity: sha512-AqR6fSPkdVejbIeXtWIcIhHA5slceeJQMXIw2WjQqtds6S0Y06srJatxQUVBbXaM6z85AYqsr5ANPSjImjlbpw==}
     engines: {node: '>=10'}
     dependencies:
-      dayjs: 1.11.10
+      date-fns: 3.3.0
       rosetta: 1.1.0
     dev: true
 
