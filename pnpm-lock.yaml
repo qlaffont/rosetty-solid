@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^0.8.5
     version: 0.8.5(@solidjs/router@0.8.3)(solid-js@1.8.11)
   '@testing-library/jest-dom':
-    specifier: 6.3.0
-    version: 6.3.0(@types/jest@29.5.11)(jest@29.7.0)
+    specifier: 6.4.0
+    version: 6.4.0(@types/jest@29.5.11)(jest@29.7.0)
   '@types/jest':
     specifier: ^29.5.11
     version: 29.5.11
@@ -2491,8 +2491,8 @@ packages:
       pretty-format: 27.5.1
     dev: true
 
-  /@testing-library/jest-dom@6.3.0(@types/jest@29.5.11)(jest@29.7.0):
-    resolution: {integrity: sha512-hJVIrkFizEQxoWsGBlycTcQhrpoCH4DhXfrnHFFXgkx3Xdm15zycsq5Ep+vpw4W8S0NJa8cxDHcuJib+1tEbhg==}
+  /@testing-library/jest-dom@6.4.0(@types/jest@29.5.11)(jest@29.7.0):
+    resolution: {integrity: sha512-GgGT3OR8qhIjk2SBMy51AYDWoMnAyR/cwjZO4SttuBmIQ9wWy9QmVOeaSbgT5Bm0J6qLBaf4+dsJWfisvafoaA==}
     engines: {node: '>=14', npm: '>=6', yarn: '>=1'}
     peerDependencies:
       '@jest/globals': '>= 28'
