@@ -34,7 +34,7 @@ devDependencies:
     version: 1.8.15(@babel/core@7.23.9)
   date-fns:
     specifier: ^3.3
-    version: 3.3.0
+    version: 3.3.1
   eslint:
     specifier: 8.57.0
     version: 8.57.0
@@ -4393,8 +4393,8 @@ packages:
     resolution: {integrity: sha512-hBSVCvSmWC+QypYObzwGOd9wqdDpOt+0wl0KbU+R+uuZBS1jN8VsD1ss3irQDknRj5NvxiTF6oj/nDRnN/UQNw==}
     dev: true
 
-  /date-fns@3.3.0:
-    resolution: {integrity: sha512-xuouT0GuI2W8yXhCMn/AXbSl1Av3wu2hJXxMnnILTY3bYY0UgNK0qOwVXqdFBrobW5qbX1TuOTgMw7c2H2OuhA==}
+  /date-fns@3.3.1:
+    resolution: {integrity: sha512-y8e109LYGgoQDveiEBD3DYXKba1jWf5BA8YU1FL5Tvm0BTdEfy54WLCwnuYWZNnzzvALy/QQ4Hov+Q9RVRv+Zw==}
     dev: true
 
   /debug@3.2.7:
@@ -8183,7 +8183,7 @@ packages:
     resolution: {integrity: sha512-AsJjQH2neZsYb9+ChKPnm4VFZqFWSnwvz8q6wE95juFPYEiVSvZjohJWEjdXIB9SuG+S50tdOOE3/uX5TV7HAQ==}
     engines: {node: '>=10'}
     dependencies:
-      date-fns: 3.3.0
+      date-fns: 3.3.1
       rosetta: 1.1.0
     dev: true
 
