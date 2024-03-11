@@ -66,8 +66,8 @@ devDependencies:
     specifier: 3.2.5
     version: 3.2.5
   rosetty:
-    specifier: 3.0.24
-    version: 3.0.24
+    specifier: 3.0.25
+    version: 3.0.25
   size-limit:
     specifier: 11.0.2
     version: 11.0.2
@@ -8166,8 +8166,8 @@ packages:
       templite: 1.2.0
     dev: true
 
-  /rosetty@3.0.24:
-    resolution: {integrity: sha512-fIi8I9VrNiqtedPuhTgTRpgFRSBGGyaR92ijo0f9hNvDAQdoUGGYEH8KspNmmKPBqhZVtrQcoxuR+zUArmFkQA==}
+  /rosetty@3.0.25:
+    resolution: {integrity: sha512-ynLdMLxda4PgFH3jsPMaaKNB0R0KHjC4IdZkpzm/BmtSaW1RWcB7oPfmj7PzMoKHgZX3mU0iGsFGIjHiWDpKXA==}
     engines: {node: '>=10'}
     dependencies:
       date-fns: 3.4.0
