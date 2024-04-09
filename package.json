@@ -102,12 +102,12 @@
     "typescript": "5.4.4",
     "solid-js": "^1.8",
     "date-fns": "^3.3",
-    "rosetty": "3.0.42"
+    "rosetty": "3.0.43"
   },
   "peerDependencies": {
     "solid-js": "^1.8",
     "date-fns": "^3.3",
-    "rosetty": "3.0.42"
+    "rosetty": "3.0.43"
   },
   "types": "./dist/index.d.ts",
   "exports": {
