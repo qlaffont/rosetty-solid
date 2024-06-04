@@ -96,7 +96,7 @@
     "size-limit": "11.1.4",
     "solid-jest": "^0.2.0",
     "ts-jest": "^29.1.1",
-    "tslib": "2.6.2",
+    "tslib": "2.6.3",
     "tsup": "^8.0.1",
     "tsup-preset-solid": "^2.2.0",
     "typescript": "5.4.5",
