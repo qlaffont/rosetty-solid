@@ -92,7 +92,7 @@
     "jest": "29.7.0",
     "jest-environment-jsdom": "^29.7.0",
     "np": "10.0.5",
-    "prettier": "3.3.1",
+    "prettier": "3.3.2",
     "size-limit": "11.1.4",
     "solid-jest": "^0.2.0",
     "ts-jest": "^29.1.1",
