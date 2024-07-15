@@ -20,9 +20,7 @@
   "scripts": {
     "build": "tsup src/index.tsx --external=date-fns,rosetty,solid-js",
     "test": "jest",
-    "lint": "eslint src test",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
+    "lint": "eslint src test"
   },
   "husky": {
     "hooks": {
@@ -38,16 +36,6 @@
   "name": "rosetty-solid",
   "author": "Quentin Laffont",
   "module": "./dist/index.js",
-  "size-limit": [
-    {
-      "path": "dist/index.js",
-      "limit": "300 KB"
-    },
-    {
-      "path": "dist/index.cjs",
-      "limit": "200 KB"
-    }
-  ],
   "jest": {
     "collectCoverage": true,
     "coverageReporters": [
@@ -75,7 +63,6 @@
     "typescript": "5.5.2"
   },
   "devDependencies": {
-    "@size-limit/preset-small-lib": "11.1.4",
     "@solidjs/testing-library": "^0.8.5",
     "@testing-library/jest-dom": "6.4.6",
     "@types/jest": "^29.5.11",
@@ -91,9 +78,7 @@
     "husky": "9.0.11",
     "jest": "29.7.0",
     "jest-environment-jsdom": "^29.7.0",
-    "np": "10.0.6",
     "prettier": "3.3.2",
-    "size-limit": "11.1.4",
     "solid-jest": "^0.2.0",
     "ts-jest": "^29.1.1",
     "tslib": "2.6.3",
