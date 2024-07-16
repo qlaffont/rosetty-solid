@@ -55,7 +55,9 @@ describe('rosetty solid', () => {
       'format',
       'formatRelative',
       'formatDistance',
+      'formatDistanceStrict',
       'formatDistanceToNow',
+      'formatDistanceToNowStrict',
       'formatDuration',
       'actualLang',
     ]);
