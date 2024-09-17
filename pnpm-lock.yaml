@@ -63,8 +63,8 @@ importers:
         specifier: 3.3.2
         version: 3.3.2
       rosetty:
-        specifier: 3.1.9
-        version: 3.1.9
+        specifier: 3.1.10
+        version: 3.1.10
       solid-jest:
         specifier: ^0.2.0
         version: 0.2.0(@babel/core@7.22.17)(babel-preset-solid@1.8.22(@babel/core@7.22.17))
@@ -2964,8 +2964,8 @@ packages:
     resolution: {integrity: sha512-3jQaCo2ySoDqLIPjy7+AvN3rluLfkG8A27hg0virL0gRAB5BJ3V35IBdkL/t6k1dGK0TVTyUEwXVUJsygyx4pA==}
     engines: {node: '>=8'}
 
-  rosetty@3.1.9:
-    resolution: {integrity: sha512-NfXaWS5Y4QN5r/HyJaDAe/o3v9Rz+CU/IJDCK+i/nC22IEpe/8PUqaDTbM5x5HDd9veOgwqat1S3rZsLit1SBw==}
+  rosetty@3.1.10:
+    resolution: {integrity: sha512-Z8wuzzBScPz1ygXsoM2iJ8zaJWioQ66/SmNb+jmOaykYNKKTWy0kYu5oJDc6vPncGHlZ+XdPHaKMChIc9yh5dQ==}
     engines: {node: '>=10'}
 
   run-applescript@5.0.0:
@@ -6931,7 +6931,7 @@ snapshots:
       dlv: 1.1.3
       templite: 1.2.0
 
-  rosetty@3.1.9:
+  rosetty@3.1.10:
     dependencies:
       date-fns: 4.1.0
       rosetta: 1.1.0
