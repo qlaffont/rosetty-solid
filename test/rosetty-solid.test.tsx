@@ -7,7 +7,6 @@
 import '@testing-library/jest-dom';
 
 import { cleanup, renderHook } from '@solidjs/testing-library';
-import { enGB, fr } from 'date-fns/locale';
 
 import { RosettyContext, RosettyProvider, useRosetty } from '../src';
 //@ts-ignore
@@ -35,7 +34,7 @@ describe('rosetty solid', () => {
     //@ts-ignore
     const wrapper = (props) => (
       <I18NContextProvider
-        languages={{ fr: { dict: {}, locale: fr } }}
+        languages={{ fr: { dict: {}, locale: "fr" } }}
         defaultLanguage="fr"
       >
         {props.children}
@@ -43,31 +42,14 @@ describe('rosetty solid', () => {
     );
     const { result } = renderHook(() => useRosetty(), { wrapper });
     expect(result().languages).toStrictEqual(['fr']);
-    expect(Object.keys(result())).toStrictEqual([
-      'changeLang',
-      'languages',
-      'getCurrentLang',
-      't',
-      'displayNames',
-      'listFormat',
-      'numberFormat',
-      'pluralRules',
-      'format',
-      'formatRelative',
-      'formatDistance',
-      'formatDistanceStrict',
-      'formatDistanceToNow',
-      'formatDistanceToNowStrict',
-      'formatDuration',
-      'actualLang',
-    ]);
+    expect(Object.keys(result())).toMatchSnapshot();
   });
 
   it('should be able to return error', () => {
     //@ts-ignore
     const wrongWrapperLanguageNotValid = (props) => (
       <I18NContextProvider
-        languages={{ fr: { dict: {}, locale: fr } }}
+        languages={{ fr: { dict: {}, locale: "fr" } }}
         defaultLanguage="en"
       >
         {props.children}
@@ -89,8 +71,8 @@ describe('rosetty solid', () => {
     const wrapper = (props) => (
       <I18NContextProvider
         languages={{
-          fr: { dict: { toto: 'test' }, locale: fr },
-          en: { dict: { toto: 'EN' }, locale: enGB },
+          fr: { dict: { toto: 'test' }, locale: "fr" },
+          en: { dict: { toto: 'EN' }, locale: "en-GB" },
         }}
         defaultLanguage="en"
       >
