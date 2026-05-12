@@ -1,5 +1,5 @@
 {
-  "version": "4.0.13",
+  "version": "5.0.0",
   "license": "MIT",
   "main": "./dist/index.cjs",
   "typings": "dist/index.d.ts",
@@ -15,84 +15,36 @@
     "dist"
   ],
   "engines": {
-    "node": ">=10"
+    "node": ">=18"
   },
   "scripts": {
-    "build": "tsup src/index.tsx --external=date-fns,rosetty,solid-js",
-    "test": "jest",
-    "lint": "eslint src test"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "pnpm lint"
-    }
-  },
-  "prettier": {
-    "printWidth": 80,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "es5"
+    "build": "bunx bunup && bun ./scripts/copy-solid-entry.ts",
+    "test": "bun test --conditions browser",
+    "test:coverage": "bun test --conditions browser --coverage --coverage-reporter=lcov --coverage-dir=coverage",
+    "lint": "oxlint src test bunup.config.ts scripts",
+    "format": "oxfmt src test bunup.config.ts scripts",
+    "format:check": "oxfmt --check src test bunup.config.ts scripts"
   },
   "name": "rosetty-solid",
   "author": "Quentin Laffont",
   "module": "./dist/index.js",
-  "jest": {
-    "collectCoverage": true,
-    "coverageReporters": [
-      "lcov"
-    ],
-    "preset": "ts-jest",
-    "globals": {
-      "ts-jest": {
-        "tsconfig": "tsconfig.json",
-        "babelConfig": {
-          "presets": [
-            "babel-preset-solid",
-            "@babel/preset-env"
-          ]
-        }
-      }
-    },
-    "testEnvironment": "jsdom",
-    "moduleNameMapper": {
-      "solid-js/web": "<rootDir>/node_modules/solid-js/web/dist/web.cjs",
-      "solid-js": "<rootDir>/node_modules/solid-js/dist/solid.cjs"
-    }
-  },
-  "resolutions": {
-    "typescript": "5.5.2"
-  },
   "devDependencies": {
-    "@solidjs/testing-library": "^0.8.5",
-    "@testing-library/jest-dom": "6.6.3",
-    "@types/jest": "^30.0.0",
-    "@typescript-eslint/eslint-plugin": "7.14.1",
-    "@typescript-eslint/parser": "7.14.1",
-    "babel-jest": "^30.0.0",
-    "babel-preset-solid": "^1.8.6",
-    "eslint": "8.57.0",
-    "eslint-config-prettier": "9.1.0",
-    "eslint-plugin-import": "2.29.1",
-    "eslint-plugin-prettier": "5.1.3",
-    "eslint-plugin-simple-import-sort": "12.1.0",
-    "husky": "9.0.11",
-    "jest": "29.7.0",
-    "jest-environment-jsdom": "^29.7.0",
-    "prettier": "3.3.2",
-    "solid-jest": "^0.2.0",
-    "ts-jest": "^29.1.1",
-    "tslib": "2.6.3",
-    "tsup": "^8.0.1",
-    "tsup-preset-solid": "^2.2.0",
-    "typescript": "5.5.2",
-    "solid-js": "^1.8",
-    "date-fns": "^4.0.0",
-    "rosetty": "^4.0.0"
+    "@formatjs/intl-durationformat": "^0.10.8",
+    "@solidjs/testing-library": "^0.8.10",
+    "bun-types": "^1.3.13",
+    "bunup": "^0.16.31",
+    "date-fns": "^4.1.0",
+    "happy-dom": "^20.9.0",
+    "oxfmt": "^0.49.0",
+    "oxlint": "^1.64.0",
+    "rosetty": "^5.0.0",
+    "solid-js": "^1.9.12",
+    "typescript": "^6.0.3"
   },
   "peerDependencies": {
     "solid-js": "^1.8",
     "date-fns": "^3.3 || ^4.0.0",
-    "rosetty": "^4.0.0"
+    "rosetty": "^5.0.0"
   },
   "types": "./dist/index.d.ts",
   "exports": {
@@ -107,7 +59,5 @@
     }
   },
   "type": "module",
-  "browser": {},
-  "typesVersions": {},
-  "packageManager": "pnpm@9.15.9"
+  "packageManager": "bun@1.3.13"
 }

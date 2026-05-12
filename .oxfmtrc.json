@@ -1,0 +1,9 @@
+{
+  "$schema": "https://raw.githubusercontent.com/oxc-project/oxc/main/npm/oxfmt/configuration/schema.json",
+  "printWidth": 80,
+  "semi": true,
+  "singleQuote": true,
+  "trailingComma": "es5",
+  "endOfLine": "lf",
+  "ignorePatterns": ["dist", "coverage", "node_modules"]
+}
